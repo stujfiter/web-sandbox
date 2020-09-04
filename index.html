@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>Web Sandbox</title>
+    <script type="text/javascript">
+        function submitOnClick() {
+            var name = document.getElementById("name_input").value;
+
+            if (localStorage.getItem('team') !== null) {
+                var team = JSON.parse(localStorage.getItem('team'));
+            } else {
+                var team = []; 
+            }
+
+            team.push(name);
+            localStorage.setItem('team',JSON.stringify(team));
+            
+            loadData();
+        }
+
+        function fillInformation() {
+            if (localStorage.getItem('team') !== null) {
+                document.getElementById("name_div").innerHTML = localStorage.getItem('name');
+            }
+        }
+
+        function loadData() {
+            if (localStorage.getItem('team') !== null) {
+                let names = JSON.parse(localStorage.getItem('team'));
+                document.getElementById("name_div").innerHTML = names.join(',');
+            }
+        }
+    </script>
+</head>
+<body onload="loadData()">
+    <h1>Web Sandbox</h1>
+    <br><label>What is your name?
+    <input id="name_input" type="text"></label>
+    <input id="submit_button" type="button" value="Submit" onclick="submitOnClick()">
+    <div id="name_div"></div>
+</body>
