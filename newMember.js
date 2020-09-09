@@ -3,7 +3,7 @@ import * as state from './applicationState.js';
 export default class NewMember {
     render() {
         let t = document.createElement('template');
-        t.innerHTML = '<div><label>New Member: \
+        t.innerHTML = '<div id="new_member"><label>New Member: \
             <input id="name_input" type="text" /></label> \
             <input id="submit_button" type="button" value="Add"/></div>';
         return t.content.firstChild;

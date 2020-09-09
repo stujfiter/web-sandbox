@@ -5,15 +5,16 @@ export default class App {
     constructor() {}
     
     render() {
-        let comps = [];
-
+        let app = document.getElementById('app');
+        while (app.firstChild) {
+            app.removeChild(app.firstChild);
+        }
+        
         var newMember = new NewMember();
-        comps.push(newMember.render());
-
         var members = new Members();
-        comps.push(members.render());
 
-        $('#app').html(comps);
+        document.getElementById('app').appendChild(newMember.render());
+        document.getElementById('app').appendChild(members.render());
         
         newMember.bind(this);
     }

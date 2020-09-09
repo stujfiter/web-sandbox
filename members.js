@@ -11,6 +11,7 @@ export default class Members {
 
 
         let table = document.createElement('table');
+        table.setAttribute('id', 'members')
         table.appendChild(row);
 
         let members = state.getMembers();
@@ -18,7 +19,7 @@ export default class Members {
         for (var i = 0; i < members.length; i++) {
             table.appendChild(this.renderMember(members[i]));
         }
-        
+
         return table;
     }
 
