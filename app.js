@@ -8,14 +8,10 @@ export default class App {
         let comps = [];
 
         var newMember = new NewMember();
-        let nm = document.createElement('template');
-        nm.innerHTML = newMember.render();
-        comps.push(nm.content.firstChild);
+        comps.push(newMember.render());
 
         var members = new Members();
-        let m = document.createElement('template');
-        m.innerHTML = members.render();
-        comps.push(m.content.firstChild);
+        comps.push(members.render());
 
         $('#app').html(comps);
         
