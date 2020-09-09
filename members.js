@@ -11,7 +11,6 @@ export default class Members {
 
 
         let table = document.createElement('table');
-        table.setAttribute('id', 'members')
         table.appendChild(row);
 
         let members = state.getMembers();
@@ -20,7 +19,11 @@ export default class Members {
             table.appendChild(this.renderMember(members[i]));
         }
 
-        return table;
+        let table_div = document.createElement('div');
+        table_div.setAttribute('id', 'members')
+        table_div.appendChild(table);
+
+        return table_div;
     }
 
     renderMember(name) {

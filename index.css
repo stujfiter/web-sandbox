@@ -33,26 +33,54 @@ tr:nth-child(odd) {
 }
 
 input[type=button] {
+    width: 100px;
     border: 0;
     border-radius: 5px;
     padding: 5px;
+    margin: 5px;
     background-color: darkcyan;
     color: #fcfcfc;
-    width: 100px;
 }
 
 input[type=text] {
+    width: 100%;
+    display: table-cell;
     border: 0;
     padding: 5px;
+    margin: 5px;
     border-radius: 5px;
     font-weight: bold;
 }
 
 #new_member {
-    margin: 20px 0 20px 0;
+    display: flex;
+    align-items: stretch;
+    line-height: 35px;
+}
+
+#new_member > div {
+    margin: 5px;
+    text-align: center;
+}
+
+#new_member_label {
+    flex: 0 0 100px;
+}
+
+#new_member_input {
+    display: flex;
+    flex: 1 1 100px;
+}
+
+#new_member_button {
+    flex: 0 0 100px;
 }
 
 #members {
-    width: 400px;
+    width: 100%;
     table-layout: fixed;
+}
+
+#members > table {
+    width: 100%;
 }

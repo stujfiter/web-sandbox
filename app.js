@@ -1,3 +1,4 @@
+import PageHeader from './pageHeader.js';
 import NewMember from './newMember.js';
 import Members from './members.js';
 
@@ -10,11 +11,13 @@ export default class App {
             app.removeChild(app.firstChild);
         }
         
+        var pageHeader = new PageHeader();
         var newMember = new NewMember();
         var members = new Members();
 
-        document.getElementById('app').appendChild(newMember.render());
-        document.getElementById('app').appendChild(members.render());
+        app.appendChild(pageHeader.render());
+        app.appendChild(newMember.render());
+        app.appendChild(members.render());
         
         newMember.bind(this);
     }
