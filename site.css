@@ -7,12 +7,12 @@
     --dark-element-bg: #2f2f2f;
 }
 
-html, body {
+body {
     background-color: var(--almost-black);
     color: var(--almost-white);
     font-family: Arial, Helvetica, sans-serif;
     margin: 20px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 h1 {
