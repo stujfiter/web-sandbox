@@ -1,4 +1,4 @@
-import * as state from './applicationState.js';
+import * as state from '../applicationState.js';
 
 export default class NewMember {
     render() {

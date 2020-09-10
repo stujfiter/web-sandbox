@@ -1,0 +1,28 @@
+#new_member {
+    display: flex;
+    align-items: stretch;
+    line-height: 35px;
+}
+
+#new_member > div {
+    margin: 5px;
+    text-align: center;
+}
+
+#new_member_input {
+    display: flex;
+    flex: 10 10 200px;
+}
+
+#new_member_button {
+    flex: 0 0 100px;
+}
+
+#members {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#members > table {
+    width: 100%;
+}

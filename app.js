@@ -1,12 +1,12 @@
 import PageHeader from './pageHeader.js';
-import NewMember from './newMember.js';
-import Members from './members.js';
+import NewMember from './member-manager/newMember.js';
+import Members from './member-manager/members.js';
 
 export default class App {
     constructor() {}
     
     render() {
-        let app = document.getElementById('app');
+        var app = document.getElementById('app');
         while (app.firstChild) {
             app.removeChild(app.firstChild);
         }
