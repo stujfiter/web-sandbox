@@ -3,8 +3,9 @@
     --almost-white: #fcfcfc;
     --major-pop: purple;
     --minor-pop: darkcyan;
-    --light-element-bg: #1f1f1f;
-    --dark-element-bg: #2f2f2f;
+    --dark-element-bg: #1f1f1f;
+    --light-element-bg: #2f2f2f;
+    --hover-element-bg: #3f3f3f;
 }
 
 body {
@@ -44,6 +45,10 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background-color: var(--dark-element-bg);
+}
+
+tr:hover {
+    background-color: var(--hover-element-bg);
 }
 
 input[type=button] {

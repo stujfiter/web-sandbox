@@ -3,16 +3,25 @@ export function addMember(name) {
         return;
     }
     
-    if (localStorage.getItem('team') !== null) {
-        var team = JSON.parse(localStorage.getItem('team'));
-    } else {
-        var team = [];
-    }
+    var team = getMembers();
     
-    team.push(name);
+    var member = {};
+    member.name = name;
+    member.selected = false;
+    team.push(member);
+
     localStorage.setItem('team',JSON.stringify(team));
 }
 
 export function getMembers() {
     return JSON.parse(localStorage.getItem('team')) ?? [];
+}
+
+export function toggleMemberSelected(index) {
+    var team = getMembers();
+    if (team.length > 0) {
+        team[index].selected = !team[index].selected;
+    }
+
+    localStorage.setItem('team', JSON.stringify(team));
 }
