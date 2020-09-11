@@ -14,6 +14,31 @@
     flex: 10 10 200px;
 }
 
+.menu_icon {
+    width: 1em;
+    position: relative;
+    padding: 0 3px;
+}
+
+.table_menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--minor-pop);
+    font-size: 0.8em;
+    line-height: 2.0em;
+    display: none;
+}
+
+.table_menu > div {
+    padding: 5px;
+}
+
+.table_menu > div:hover {
+    background-color: var(--minor-pop-hover);
+}
+
 #new_member_button {
     flex: 0 0 100px;
 }
@@ -21,6 +46,7 @@
 #members {
     width: 100%;
     table-layout: fixed;
+    position: relative;
 }
 
 #members > table {

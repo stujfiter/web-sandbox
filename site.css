@@ -2,7 +2,8 @@
     --almost-black: #0f0f0f;
     --almost-white: #fcfcfc;
     --major-pop: purple;
-    --minor-pop: darkcyan;
+    --minor-pop: #008b8b;
+    --minor-pop-hover: #007b7b;
     --dark-element-bg: #1f1f1f;
     --light-element-bg: #2f2f2f;
     --hover-element-bg: #3f3f3f;

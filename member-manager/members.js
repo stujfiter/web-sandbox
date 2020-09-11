@@ -1,16 +1,27 @@
 import * as state from '../applicationState.js';
+import TableMenu from './tableMenu.js';
 
 export default class Members {
     render () {
+        let tableMenu = new TableMenu();
+
         let col2Header = document.createElement('th');
         col2Header.textContent = 'Team Members';
 
-        let row = document.createElement('tr');
-        row.appendChild(document.createElement('th'));
-        row.appendChild(col2Header);
+        let col3Header = document.createElement('th');
+        col3Header.textContent = '\u2630';
+        col3Header.classList.add('menu_icon');
+        col3Header.addEventListener('mouseenter', function () {
+            tableMenu.show();
+        });
+
+        let headerRow = document.createElement('tr');
+        headerRow.appendChild(document.createElement('th'));
+        headerRow.appendChild(col2Header);
+        headerRow.appendChild(col3Header);
         
         let table = document.createElement('table');
-        table.appendChild(row);
+        table.appendChild(headerRow);
 
         let members = state.getMembers();
 
@@ -21,7 +32,8 @@ export default class Members {
         }
 
         let table_div = document.createElement('div');
-        table_div.setAttribute('id', 'members')
+        table_div.setAttribute('id', 'members');
+        table_div.appendChild(tableMenu.render());
         table_div.appendChild(table);
 
         return table_div;
@@ -46,6 +58,7 @@ export default class Members {
 
         let td_name = document.createElement('td');
         td_name.textContent = member.name;
+        td_name.colSpan = 2;
 
         let tr = document.createElement('tr');
         tr.appendChild(td_checkBox)
