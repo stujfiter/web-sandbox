@@ -13,13 +13,17 @@ export default class App {
         
         var pageHeader = new PageHeader();
         var newMember = new NewMember();
-        var members = new Members();
+        var members = new Members(this);
 
         app.appendChild(pageHeader.render());
         app.appendChild(newMember.render());
         app.appendChild(members.render());
         
         newMember.bind(this);
+    }
+
+    handleStateChanged() {
+        this.render();
     }
 }
 

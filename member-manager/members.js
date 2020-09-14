@@ -2,6 +2,11 @@ import * as state from '../applicationState.js';
 import TableMenu from './tableMenu.js';
 
 export default class Members {
+
+    constructor(parent) {
+        this.parent = parent;
+    }
+
     render () {
         let tableMenu = new TableMenu();
 
@@ -23,28 +28,25 @@ export default class Members {
         let table = document.createElement('table');
         table.appendChild(headerRow);
 
-        let members = state.getMembers();
-
-        for (var i = 0; i < members.length; i++) {
-            let member = this.renderMember(members[i]);
-            this.bindMember(member, this);
-            table.appendChild(member);
-        }
+        state.getMembers().map((member, index) => {
+            let tr = this.renderMember(member);
+            tr.addEventListener('click', function () {
+                this.querySelector('input[type="checkbox"]').checked = state.toggleMemberSelected(index);
+            });
+            table.appendChild(tr);
+        });
 
         let table_div = document.createElement('div');
         table_div.setAttribute('id', 'members');
-        table_div.appendChild(tableMenu.render());
+        table_div.appendChild(tableMenu.render(this));
         table_div.appendChild(table);
 
         return table_div;
     }
 
-    bindMember(member, parent) {
-        member.addEventListener('click', function (event) {
-            var index = Array.from(this.parentNode.children).indexOf(this) - 1;
-            state.toggleMemberSelected(index);
-            this.querySelector('input[type="checkbox"]').checked = state.getMembers()[index].selected;
-        });
+    handleClearAll() {
+        state.clearAllSelections();
+        this.parent.handleStateChanged();
     }
 
     renderMember(member) {

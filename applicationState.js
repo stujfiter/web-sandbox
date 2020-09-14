@@ -19,9 +19,19 @@ export function getMembers() {
 
 export function toggleMemberSelected(index) {
     var team = getMembers();
-    if (team.length > 0) {
-        team[index].selected = !team[index].selected;
+    if (team.length <= 0) {
+        return false;
     }
 
+    team[index].selected = !team[index].selected;
     localStorage.setItem('team', JSON.stringify(team));
+    return team[index].selected;
+}
+
+export function clearAllSelections() {
+    var team = getMembers();
+    team.forEach(element => {
+        element.selected = false;
+    });
+    localStorage.setItem('team',JSON.stringify(team));
 }
