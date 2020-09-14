@@ -2,6 +2,9 @@ export default class TableMenu {
     render(parent) {
         let deleteMenuItem = document.createElement('div');
         deleteMenuItem.textContent = "Delete";
+        deleteMenuItem.addEventListener('click', () => {
+            parent.handleDeleteSelected();
+        });
 
         let clearMenuItem = document.createElement('div');
         clearMenuItem.textContent = "Clear";

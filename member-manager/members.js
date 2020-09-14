@@ -49,6 +49,11 @@ export default class Members {
         this.parent.handleStateChanged();
     }
 
+    handleDeleteSelected() {
+        state.deleteSelected();
+        this.parent.handleStateChanged();
+    }
+
     renderMember(member) {
         let cb = document.createElement('input');
         cb.setAttribute('type','checkBox');

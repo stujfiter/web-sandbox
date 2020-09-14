@@ -29,9 +29,16 @@ export function toggleMemberSelected(index) {
 }
 
 export function clearAllSelections() {
-    var team = getMembers();
-    team.forEach(element => {
-        element.selected = false;
+    var team = getMembers().map(x => {
+        x.selected = false;
+        return x;
     });
     localStorage.setItem('team',JSON.stringify(team));
+}
+
+export function deleteSelected() {
+    var newTeam = getMembers().filter(e => {
+        return !e.selected;
+    });
+    localStorage.setItem('team', JSON.stringify(newTeam));
 }
