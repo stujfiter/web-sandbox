@@ -16,7 +16,10 @@ export default class Members {
         let col3Header = document.createElement('th');
         col3Header.textContent = '\u2630';
         col3Header.classList.add('menu_icon');
-        col3Header.addEventListener('mouseenter', function () {
+        col3Header.addEventListener('mouseenter', () => {
+            tableMenu.show();
+        });
+        col3Header.addEventListener('click', () => {
             tableMenu.show();
         });
 

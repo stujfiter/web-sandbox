@@ -17,7 +17,7 @@ export default class TableMenu {
         tableMenu.classList.add('table_menu');
         tableMenu.appendChild(deleteMenuItem);
         tableMenu.appendChild(clearMenuItem);
-        tableMenu.addEventListener('mouseleave', e => {
+        tableMenu.addEventListener('mouseleave', () => {
             tableMenu.style.display = 'none';
         });
 
