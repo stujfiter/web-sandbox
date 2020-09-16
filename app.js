@@ -1,9 +1,21 @@
+import { AuthorizationServiceConfiguration } from '@openid/appauth/built/authorization_service_configuration'
 import PageHeader from './pageHeader.js';
 import NewMember from './member-manager/newMember.js';
 import Members from './member-manager/members.js';
 
 export default class App {
-    constructor() {}
+    constructor() {
+        let openIdConnectUrl = "https://dev-397960.okta.com/oauth2/default";
+        AuthorizationServiceConfiguration.fetchFromIssuer(openIdConnectUrl)
+            .then(response => {
+                console.log('Fetched service configuration', response);
+                this.configuration = response;
+                console.log('Completed fetching configuration');
+            })
+            .catch(error => {
+                console.log('Something bad happened', error);
+            });
+    }
     
     render() {
         var app = document.getElementById('app');

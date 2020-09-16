@@ -14,7 +14,11 @@ export function addMember(name) {
 }
 
 export function getMembers() {
-    return JSON.parse(localStorage.getItem('team')) ?? [];
+    if (localStorage.getItem('team')) {
+        return JSON.parse(localStorage.getItem('team'));
+    } else {
+        return [];
+    }
 }
 
 export function toggleMemberSelected(index) {

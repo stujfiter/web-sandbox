@@ -25,10 +25,13 @@
     top: 0;
     right: 0;
     z-index: 999;
+    padding: 5px 0 5px 0;
     background-color: var(--minor-pop);
     font-size: 0.8em;
     line-height: 2.0em;
     display: none;
+    box-shadow: 0 10px 20px black;
+    border-radius: 3px;
 }
 
 .table_menu > div {
