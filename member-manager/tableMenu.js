@@ -1,15 +1,17 @@
 export default class TableMenu {
-    render(parent) {
+    constructor (parent) {
+        this.parent = parent;
+    }
+
+    render() {
         let deleteMenuItem = document.createElement('div');
+        deleteMenuItem.setAttribute('id','delete_menu_item');
         deleteMenuItem.textContent = "Delete";
-        deleteMenuItem.addEventListener('click', () => {
-            parent.handleDeleteSelected();
-        });
 
         let clearMenuItem = document.createElement('div');
         clearMenuItem.textContent = "Clear";
         clearMenuItem.addEventListener('click', () => {
-            parent.handleClearAll();
+            this.parent.handleClearAll();
         });
 
         let tableMenu = document.createElement('div');
@@ -26,5 +28,9 @@ export default class TableMenu {
 
     show() {
         document.querySelector('#member_table_menu').style.display = 'block';
+        let deleteMenuItem = document.querySelector('#delete_menu_item');
+        setTimeout(() => deleteMenuItem.addEventListener('click', () => {
+            this.parent.handleDeleteSelected();
+        }), 100);
     }
 }

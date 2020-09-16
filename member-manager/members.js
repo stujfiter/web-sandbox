@@ -8,7 +8,7 @@ export default class Members {
     }
 
     render () {
-        let tableMenu = new TableMenu();
+        let tableMenu = new TableMenu(this);
 
         let col2Header = document.createElement('th');
         col2Header.textContent = 'Team Members';
@@ -19,7 +19,7 @@ export default class Members {
         col3Header.addEventListener('mouseenter', () => {
             tableMenu.show();
         });
-        col3Header.addEventListener('click', () => {
+        col3Header.addEventListener('click', event => {
             tableMenu.show();
         });
 
@@ -41,7 +41,7 @@ export default class Members {
 
         let table_div = document.createElement('div');
         table_div.setAttribute('id', 'members');
-        table_div.appendChild(tableMenu.render(this));
+        table_div.appendChild(tableMenu.render());
         table_div.appendChild(table);
 
         return table_div;
