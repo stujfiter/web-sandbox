@@ -34,6 +34,10 @@
     border-radius: 3px;
 }
 
+.table_menu:focus {
+    outline-style: none;
+}
+
 .table_menu > div {
     padding: 0 15px 0 15px;
 }
