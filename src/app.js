@@ -1,5 +1,5 @@
 import { AuthorizationServiceConfiguration } from '@openid/appauth/built/authorization_service_configuration'
-import PageHeader from './pageHeader.js';
+import PageHeader from '../pageHeader.js';
 import NewMember from './member-manager/newMember.js';
 import Members from './member-manager/members.js';
 
