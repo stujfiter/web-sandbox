@@ -20,9 +20,6 @@ export default class Members {
         let col3Header = document.createElement('th');
         col3Header.classList.add('menu_icon');
         col3Header.appendChild(menuIcon);
-        col3Header.addEventListener('mouseenter', () => {
-            tableMenu.show();
-        });
         col3Header.addEventListener('click', event => {
             tableMenu.show();
         });

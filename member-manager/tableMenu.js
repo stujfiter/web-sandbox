@@ -31,6 +31,6 @@ export default class TableMenu {
         let deleteMenuItem = document.querySelector('#delete_menu_item');
         setTimeout(() => deleteMenuItem.addEventListener('click', () => {
             this.parent.handleDeleteSelected();
-        }), 100);
+        }), 200);
     }
 }
