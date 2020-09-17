@@ -5,6 +5,9 @@ module.exports = {
     mode: 'development',
     entry: './src/app.js',
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'sandbox.js'
