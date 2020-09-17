@@ -32,10 +32,7 @@
     display: none;
     box-shadow: 0 10px 20px black;
     border-radius: 3px;
-}
-
-.table_menu:focus {
-    outline-style: none;
+    outline: none !important;
 }
 
 .table_menu > div {
