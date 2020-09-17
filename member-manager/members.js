@@ -13,9 +13,13 @@ export default class Members {
         let col2Header = document.createElement('th');
         col2Header.textContent = 'Team Members';
 
+        let menuIcon = document.createElement('i');
+        menuIcon.classList.add('fas');
+        menuIcon.classList.add('fa-bars');
+
         let col3Header = document.createElement('th');
-        col3Header.textContent = '\u2630';
         col3Header.classList.add('menu_icon');
+        col3Header.appendChild(menuIcon);
         col3Header.addEventListener('mouseenter', () => {
             tableMenu.show();
         });
