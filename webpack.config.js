@@ -2,7 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+    mode: 'development',
     entry: './src/app.js',
+    devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'sandbox.js'
@@ -13,5 +15,16 @@ module.exports = {
             jQuery: "jquery",
             "window.jQuery": "jquery"
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+            },
+        ],
+    },
 };

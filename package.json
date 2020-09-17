@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=development"
+    "watch": "webpack --watch",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,8 @@
     "jquery": "^3.5.1"
   },
   "devDependencies": {
+    "css-loader": "^4.3.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }

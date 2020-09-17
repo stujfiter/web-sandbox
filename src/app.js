@@ -2,6 +2,9 @@ import { AuthorizationServiceConfiguration } from '@openid/appauth/built/authori
 import PageHeader from '../pageHeader.js';
 import NewMember from './member-manager/newMember.js';
 import Members from './member-manager/members.js';
+import './site.css';
+import './mobile.css';
+import './member-manager/style.css';
 
 export default class App {
     constructor() {
