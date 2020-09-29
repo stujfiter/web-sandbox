@@ -35,7 +35,7 @@ export default class App {
     }
 
     signOut() {
-        authClient.signOut({ 'postLogoutRedirectUri': 'http://localhost:8080' });
+        authClient.signOut({ 'postLogoutRedirectUri': window.location.href });
     }
 
     render() {

@@ -12,6 +12,7 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
+    "@okta/okta-auth-js": "^4.0.2",
     "jquery": "^3.5.1"
   },
   "devDependencies": {
