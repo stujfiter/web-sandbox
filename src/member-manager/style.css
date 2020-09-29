@@ -20,6 +20,10 @@
     padding: 0 3px;
 }
 
+.menu_icon:hover {
+    cursor: pointer;
+}
+
 .table_menu {
     position: absolute;
     top: 0;
@@ -41,6 +45,7 @@
 
 .table_menu > div:hover {
     background-color: var(--minor-pop-hover);
+    cursor: pointer;
 }
 
 #new_member_button {

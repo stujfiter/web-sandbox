@@ -52,7 +52,7 @@ tr:hover {
     background-color: var(--hover-element-bg);
 }
 
-div .button {
+.button {
     width: 100px;
     border: 0;
     border-radius: 5px;
@@ -61,6 +61,11 @@ div .button {
     background-color: var(--minor-pop);
     color: var(--almost-white);
     font-size: 1em;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: var(--minor-pop-hover);
 }
 
 input[type=checkbox] {
@@ -86,4 +91,18 @@ input[type=text] {
 
 #page_header {
     text-align: center;
+    width: 800px;
+}
+
+#sign_out {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    padding: 5px 20px 0px 20px;
+    font-size: 1em;
+}
+
+#sign_out:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

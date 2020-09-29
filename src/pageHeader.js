@@ -7,8 +7,10 @@ export default class PageHeader {
         let title = document.createElement('h1');
         title.textContent = 'Web Sandbox';
 
-        let signOut = document.createElement('a');
-        signOut.textContent = 'Sign Out';
+        let signOut = document.createElement('i');
+        signOut.setAttribute('id', 'sign_out');
+        signOut.classList.add('fas');
+        signOut.classList.add('fa-sign-out-alt');
         signOut.addEventListener('click', e => {
             this.parent.signOut();
         });

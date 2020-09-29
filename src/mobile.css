@@ -23,4 +23,8 @@
         margin: 0 auto;
         font-size: 100%;
     }
+
+    #sign_out {
+        padding: 1px;
+    }
 }
